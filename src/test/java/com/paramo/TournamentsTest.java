@@ -5,17 +5,17 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
-public class ContactsTest {
+public class TournamentsTest {
 
 	WebDriver driver;
 
 	
-	ContactsPage contactsPage;
+	TournamentsPage contactsPage;
 
 	@Before
 	public void setUp() throws Exception {
 		
-		contactsPage = new ContactsPage(driver);
+		contactsPage = new TournamentsPage(driver);
 		driver = contactsPage.chromeDriverConnection();
 		contactsPage.visit("https://demo.casino/");
 		driver.manage().window().maximize();
@@ -30,8 +30,8 @@ public class ContactsTest {
 	@Test
 	public void contacts() {
 		
-		contactsPage.clickMore();
-		contactsPage.clickContacsOptions();
+		contactsPage.signIn();
+		contactsPage.tournaments();
 		
 	}
 

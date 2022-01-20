@@ -9,10 +9,8 @@ public class CreateUserPage extends Base {
 	By BUTTON_REGISTER = By.xpath("//*[@class='button button--s4 button--t1 header-button header-button--registration']");
 	By EMAIL_FIELD = By.id("core__protected_modules_user_yiiForm_RegistrationForm_email");
 	By BOX_TYC = By.cssSelector(".form__input--checkbox:nth-child(2) > label");
-
 	By LINK_TYC = By.xpath("//a[@href='/info/terms-of-use']");
 	By LINK_DATA_POLICY = By.xpath("//a[@href='/info/privacy-policy']");
-
 	By TYPE_PASSWORD = By.id("core__protected_modules_user_yiiForm_RegistrationForm_password");
 	By TYPE_REENTER_PASSWORD = By.id("core__protected_modules_user_yiiForm_RegistrationForm_password_confirmation");
 	By ENTER_CODE_CAPTCHA = By.id("core__protected_modules_user_yiiForm_RegistrationForm_captcha");
