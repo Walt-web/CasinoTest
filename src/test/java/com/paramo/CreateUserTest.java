@@ -38,7 +38,7 @@ public class CreateUserTest {
 	/*
 	 * The test consists of creating a new user.
 	 * We go through the registration flow selecting all required fields.
-	 * Since the captcha is not automatable, we validate that an error message is displayed 
+	 * Since the captcha cannot be inspected, we validate that an error message is displayed 
 	 * when entering an invalid code and validate other fields completed incorrectly. 
 	 */
 	
