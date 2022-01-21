@@ -9,6 +9,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
+/*
+ * This class works as a wrapper. 
+ * It contains the definition of the methods that will be used by different classes 
+ * to perform actions.
+ *   
+ */
 public class Base {
 
 	private WebDriver driver;

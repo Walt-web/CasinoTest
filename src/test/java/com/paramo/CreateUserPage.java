@@ -4,6 +4,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+/*
+ * This class contains the locators of the elements that chromedriver selects 
+ * to perform the actions that we indicate to the WebDriver. 
+ * 
+ * It also contains the methods that are used in the test class and implements 
+ * the methods it inherits from the base class.
+ * 
+ */
+
 public class CreateUserPage extends Base {
 
 	By BUTTON_REGISTER = By.xpath("//*[@class='button button--s4 button--t1 header-button header-button--registration']");

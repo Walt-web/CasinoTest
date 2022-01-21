@@ -8,6 +8,13 @@ import org.openqa.selenium.WebDriver;
 
 import junit.framework.Assert;
 
+/*
+ * In this class we use selenium properties that execute the automatic test. 
+ * We make assertions and invocations to methods of the page class 
+ * that we use by creating an instance of the page object.
+ * 
+ */
+
 public class CreateUserTest {
 
 	WebDriver driver;
@@ -28,6 +35,13 @@ public class CreateUserTest {
 		driver.quit();
 	}
 
+	/*
+	 * The test consists of creating a new user.
+	 * We go through the registration flow selecting all required fields.
+	 * Since the captcha is not automatable, we validate that an error message is displayed 
+	 * when entering an invalid code and validate other fields completed incorrectly. 
+	 */
+	
 	@Test
 	public void createUserTest() throws Exception {
 

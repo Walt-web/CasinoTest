@@ -3,13 +3,17 @@ package com.paramo;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-	
+/*
+ * This class contains the locators of the elements that chromedriver selects 
+ * to perform the actions that we indicate to the WebDriver. 
+ * 
+ * It also contains the methods that are used in the test class and implements 
+ * the methods it inherits from the base class.
+ * 
+ */
 
 public class TournamentsPage extends Base {
-	
-	//By MORE = By.xpath("//span[@class='header-menu-main__item-link menu-dd__button']");
-	
-	
+
 	By SIGN = By.xpath("//*[contains(text(),'Sign in')]");
 	By USER = By.id("UserLogin_username");
 	By PASSWORD = By.id("UserLogin_password");
@@ -22,24 +26,23 @@ public class TournamentsPage extends Base {
 	By TOURNAMENTS_OPTION_FINISHED = By.xpath("//li[contains(text(),'Finished')]");
 	By TOURNAMENTS_OPTION_SUBSCRIBED = By.xpath("//li[contains(text(),'Subscribed')]");
 	By TOURNAMENTS_OPTION_CANCELED = By.xpath("//li[contains(text(),'Canceled')]");
-	
 
 	public TournamentsPage(WebDriver driver) {
 		super(driver);
 	}
-	
+
 	public void signIn() {
 
 		checkIsDisplayed(SIGN);
 		click(SIGN);
 		checkIsDisplayed(USER);
-		type("john2020",USER);
-		type("MyPassword1",PASSWORD);
+		type("john2020", USER);
+		type("MyPassword1", PASSWORD);
 		checkIsDisplayed(SUBMIT);
 		click(SUBMIT);
-		
+
 	}
-	
+
 	public void tournaments() {
 
 		checkIsDisplayed(MENU);
@@ -47,22 +50,27 @@ public class TournamentsPage extends Base {
 		checkIsDisplayed(SELECT_TOURNAMENTS);
 		click(SELECT_TOURNAMENTS);
 	}
-	
+
 	public String optionTournamensAll() {
 		return getText(TOURNAMENTS_OPTION_ALL);
 	}
+
 	public String optionTournamensPending() {
 		return getText(TOURNAMENTS_OPTION_PENDING);
 	}
+
 	public String optionTournamensActive() {
 		return getText(TOURNAMENTS_OPTION_ACTIVE);
 	}
+
 	public String optionTournamensFinished() {
 		return getText(TOURNAMENTS_OPTION_FINISHED);
 	}
+
 	public String optionTournamenSubscribe() {
 		return getText(TOURNAMENTS_OPTION_SUBSCRIBED);
 	}
+
 	public String optionTournamensCanceled() {
 		return getText(TOURNAMENTS_OPTION_CANCELED);
 	}
