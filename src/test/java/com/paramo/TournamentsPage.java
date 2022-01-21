@@ -16,6 +16,13 @@ public class TournamentsPage extends Base {
 	By SUBMIT = By.xpath("//button[@class='button button--s1 button--t1 ']");
 	By MENU = By.xpath("//i[@class='icon-mobile-menu']");
 	By SELECT_TOURNAMENTS = By.xpath("//*[@class='quick-links-menu__item-link ' and @href='/tournaments/tournaments/getAll']");
+	By TOURNAMENTS_OPTION_ALL = By.xpath("//li[contains(text(),'All')]");
+	By TOURNAMENTS_OPTION_PENDING = By.xpath("//li[contains(text(),'Pending')]");
+	By TOURNAMENTS_OPTION_ACTIVE = By.xpath("//li[contains(text(),'Active')]");
+	By TOURNAMENTS_OPTION_FINISHED = By.xpath("//li[contains(text(),'Finished')]");
+	By TOURNAMENTS_OPTION_SUBSCRIBED = By.xpath("//li[contains(text(),'Subscribed')]");
+	By TOURNAMENTS_OPTION_CANCELED = By.xpath("//li[contains(text(),'Canceled')]");
+	
 
 	public TournamentsPage(WebDriver driver) {
 		super(driver);
@@ -39,6 +46,25 @@ public class TournamentsPage extends Base {
 		click(MENU);
 		checkIsDisplayed(SELECT_TOURNAMENTS);
 		click(SELECT_TOURNAMENTS);
+	}
+	
+	public String optionTournamensAll() {
+		return getText(TOURNAMENTS_OPTION_ALL);
+	}
+	public String optionTournamensPending() {
+		return getText(TOURNAMENTS_OPTION_PENDING);
+	}
+	public String optionTournamensActive() {
+		return getText(TOURNAMENTS_OPTION_ACTIVE);
+	}
+	public String optionTournamensFinished() {
+		return getText(TOURNAMENTS_OPTION_FINISHED);
+	}
+	public String optionTournamenSubscribe() {
+		return getText(TOURNAMENTS_OPTION_SUBSCRIBED);
+	}
+	public String optionTournamensCanceled() {
+		return getText(TOURNAMENTS_OPTION_CANCELED);
 	}
 
 }

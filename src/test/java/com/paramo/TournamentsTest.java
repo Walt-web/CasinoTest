@@ -5,19 +5,21 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
+import junit.framework.Assert;
+
 public class TournamentsTest {
 
 	WebDriver driver;
 
 	
-	TournamentsPage contactsPage;
+	TournamentsPage tournamentsPage;
 
 	@Before
 	public void setUp() throws Exception {
 		
-		contactsPage = new TournamentsPage(driver);
-		driver = contactsPage.chromeDriverConnection();
-		contactsPage.visit("https://demo.casino/");
+		tournamentsPage = new TournamentsPage(driver);
+		driver = tournamentsPage.chromeDriverConnection();
+		tournamentsPage.visit("https://demo.casino/");
 		driver.manage().window().maximize();
 	}
 
@@ -30,9 +32,16 @@ public class TournamentsTest {
 	@Test
 	public void contacts() {
 		
-		contactsPage.signIn();
-		contactsPage.tournaments();
+		tournamentsPage.signIn();
+		tournamentsPage.tournaments();
+		Assert.assertEquals("All", tournamentsPage.optionTournamensAll());
+		Assert.assertEquals("Pending", tournamentsPage.optionTournamensPending());
+		Assert.assertEquals("Active", tournamentsPage.optionTournamensActive());
+		Assert.assertEquals("Finished", tournamentsPage.optionTournamensFinished());
+		Assert.assertEquals("Subscribed", tournamentsPage.optionTournamenSubscribe());
+		Assert.assertEquals("Canceled", tournamentsPage.optionTournamensCanceled());
 		
+
 	}
 
 }
