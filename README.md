@@ -1,4 +1,4 @@
-###Automated testing project. Paramore exercise. 
+##Automated testing project. Paramore exercise. 
 This project contains two automated test cases, programmed in java with selenium and Junit dependencies. The first case validates the user creation form and the second one the login to the page with a valid user and the access to the tournaments menu option. 
 
 ### Configuration
