@@ -3,6 +3,7 @@ package com.paramo;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+
 /*
  * This class contains the locators of the elements that chromedriver selects 
  * to perform the actions that we indicate to the WebDriver. 
@@ -26,6 +27,8 @@ public class TournamentsPage extends Base {
 	By TOURNAMENTS_OPTION_FINISHED = By.xpath("//li[contains(text(),'Finished')]");
 	By TOURNAMENTS_OPTION_SUBSCRIBED = By.xpath("//li[contains(text(),'Subscribed')]");
 	By TOURNAMENTS_OPTION_CANCELED = By.xpath("//li[contains(text(),'Canceled')]");
+	
+	DataFileCSV dataFileCSV = new DataFileCSV();
 
 	public TournamentsPage(WebDriver driver) {
 		super(driver);
@@ -36,8 +39,8 @@ public class TournamentsPage extends Base {
 		checkIsDisplayed(SIGN);
 		click(SIGN);
 		checkIsDisplayed(USER);
-		type("john2020", USER);
-		type("MyPassword1", PASSWORD);
+		type(dataFileCSV.getSeUser2(), USER);
+		type(dataFileCSV.getPasswrod2(), PASSWORD);
 		checkIsDisplayed(SUBMIT);
 		click(SUBMIT);
 
@@ -74,5 +77,7 @@ public class TournamentsPage extends Base {
 	public String optionTournamensCanceled() {
 		return getText(TOURNAMENTS_OPTION_CANCELED);
 	}
+	
+
 
 }

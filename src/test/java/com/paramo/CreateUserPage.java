@@ -51,6 +51,7 @@ public class CreateUserPage extends Base {
 	By ERROR_CAPTCHA = By.xpath("//*[contains(text(),'Invalid verification code')]");
 	By ERROR_NICKNAME = By.xpath("//*[contains(text(),'Invalid nickname use A-z, 0-9.')]");
 	
+	DataFileCSV dataFileCSV = new DataFileCSV();
 
 	public CreateUserPage(WebDriver driver) {
 		super(driver);
@@ -61,50 +62,48 @@ public class CreateUserPage extends Base {
 		checkIsDisplayed(BUTTON_REGISTER);
 		click(BUTTON_REGISTER);
 	}
-
+	
 	public void typeEmail() {
 		checkIsDisplayed(EMAIL_FIELD);
-		type("servinw8@gmail.com", EMAIL_FIELD);
+		type(dataFileCSV.getEmail(), EMAIL_FIELD);
 	}
 
 	public void clickBoxTyC() {
 		checkIsDisplayed(BOX_TYC);
 		click(BOX_TYC);
 	}
-
 	public void typePassword() {
 		checkIsDisplayed(EMAIL_FIELD);
-		type("MyPassword", TYPE_PASSWORD);
+		type(dataFileCSV.getPassword(), TYPE_PASSWORD);
 	}
-
 	public void typeReenterPassword() {
 		checkIsDisplayed(TYPE_REENTER_PASSWORD);
-		type("MyPassword", TYPE_REENTER_PASSWORD);
+		type(dataFileCSV.getPassword(), TYPE_REENTER_PASSWORD);
 	}
 
 	public void typeCaptcha() {
 		checkIsDisplayed(ENTER_CODE_CAPTCHA);
 		type("XIPPGUV", ENTER_CODE_CAPTCHA);
 	}
-
+	//valor 2
 	public void typeLogin() {
 		checkIsDisplayed(LOGIN);
-		type("john2020", LOGIN);
+		type(dataFileCSV.getLogin(), LOGIN);
 	}
-
+	
 	public void typeName() {
 		checkIsDisplayed(NAME);
-		type("John", NAME);
+		type(dataFileCSV.getName(), NAME);
 	}
 
 	public void typeLastName() {
 		checkIsDisplayed(LAST_NAME);
-		type("Walker", LAST_NAME);
+		type(dataFileCSV.getLastName(), LAST_NAME);
 	}
 
 	public void typeMiddleName() {
 		checkIsDisplayed(MIDDLE_NAME);
-		type("Carl", MIDDLE_NAME);
+		type(dataFileCSV.getMiddleName(), MIDDLE_NAME);
 	}
 
 	public void cliclRedeemBonus() {
@@ -112,7 +111,6 @@ public class CreateUserPage extends Base {
 		click(REDEEM_BONUS);
 	}
 
-	// Ver AssertEquals
 	public String titleBonus() {
 		return getText(TITTLE_BONUS);
 	}
@@ -129,13 +127,13 @@ public class CreateUserPage extends Base {
 
 	public void typeNickName() {
 		checkIsDisplayed(NICK_NAME);
-		type("JOHN WIN", NICK_NAME);
+		type(dataFileCSV.getNickName(), NICK_NAME);
 
 	}
 
 	public void typeAddress() {
 		checkIsDisplayed(ADDRESS);
-		type("815 Boylston Street", ADDRESS);
+		type(dataFileCSV.getAddres(), ADDRESS);
 
 	}
 
@@ -150,13 +148,13 @@ public class CreateUserPage extends Base {
 
 	public void typeCity() {
 		checkIsDisplayed(CITY);
-		type("BOSTON", CITY);
+		type(dataFileCSV.getCity(), CITY);
 
 	}
 
 	public void typePostalCode() {
 		checkIsDisplayed(POSTAL_CODE);
-		type("02114", POSTAL_CODE);
+		type(dataFileCSV.getPostalCode(), POSTAL_CODE);
 
 	}
 
@@ -174,7 +172,7 @@ public class CreateUserPage extends Base {
 		checkIsDisplayed(SELECT_SECRET_QUESTION);
 		click(SELECT_SECRET_QUESTION);
 		checkIsDisplayed(ANSWER);
-		type("The little prince", ANSWER);
+		type(dataFileCSV.getSecretQuestion(), ANSWER);
 
 	}
 

@@ -4,9 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-
 import junit.framework.Assert;
-
 
 /*
  * In this class we use selenium properties that execute the automatic test. 
@@ -34,9 +32,10 @@ public class TournamentsTest {
 		Thread.sleep(5000);
 		driver.quit();
 	}
-	
+
 	/*
-	 * We login with a valid user and enter the tournaments option validating existing elements when entering. 
+	 * We login with a valid user and enter the tournaments option validating
+	 * existing elements when entering.
 	 */
 
 	@Test

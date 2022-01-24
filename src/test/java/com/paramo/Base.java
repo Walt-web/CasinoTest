@@ -9,7 +9,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
 /*
  * This class works as a wrapper. 
  * It contains the definition of the methods that will be used by different classes 
@@ -46,7 +45,7 @@ public class Base {
 	public String getText(By locator) {
 		return driver.findElement(locator).getText();
 	}
-	
+
 	public String getTitle(By locator) {
 		return driver.getTitle();
 	}
@@ -70,30 +69,25 @@ public class Base {
 			return false;
 		}
 	}
-	
-	
-	//Method waits 10 seconds, checks if the element is clickable
+
+	// Method waits 10 seconds, checks if the element is clickable
 	public boolean checkIsDisplayed(By locator) {
 
-		WebDriverWait ewait = new WebDriverWait(driver, 10);	
+		WebDriverWait ewait = new WebDriverWait(driver, 10);
 		boolean wait = false;
 
 		try {
-			if(ewait.until(ExpectedConditions.elementToBeClickable(locator)) != null)
+			if (ewait.until(ExpectedConditions.elementToBeClickable(locator)) != null)
 				wait = true;
 		} catch (org.openqa.selenium.TimeoutException e) {
 			wait = false;
 			System.out.println(locator + "Not Exist");
 		}
-	
+
 		return wait;
 	}
-	
 
 	public void visit(String url) {
 		driver.get(url);
 	}
-
-
-	
 }
